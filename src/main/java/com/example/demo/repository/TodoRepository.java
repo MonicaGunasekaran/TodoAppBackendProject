@@ -51,10 +51,5 @@ public interface TodoRepository extends JpaRepository<TodoModel, UUID> {
     		nativeQuery=true
     		)
     List<PendingTasksOnDue> findDueByOrder();
-    @Query(
-    		value="select count(*) from todo t where completed =false ",
-    		nativeQuery=true
-    		)
-    int pendingTasksCount();
-	Optional<TodoModel> findByTaskName(String task_name);
+  
 }
