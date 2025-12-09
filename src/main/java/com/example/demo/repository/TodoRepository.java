@@ -66,5 +66,11 @@ public interface TodoRepository extends JpaRepository<TodoModel, UUID> {
     	    nativeQuery=true
     	)
     	List<TodoModel> findIncomplete();
+    //same feature but on monica branch based on completion status
+    @Query(
+    		value="SELECT * FROM todo WHERE completed=false",
+    		nativeQuery=true
+    		)
+    List<TodoModel> findTodos();
 
 }
