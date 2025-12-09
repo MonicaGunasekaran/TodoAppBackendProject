@@ -51,5 +51,12 @@ public interface TodoRepository extends JpaRepository<TodoModel, UUID> {
     		nativeQuery=true
     		)
     List<PendingTasksOnDue> findDueByOrder();
+    //i am from monica branch, the same feature has been changed as per the demo branch
+    @Query(
+    	    value="SELECT * FROM todo ORDER BY created_at DESC",
+    	    nativeQuery=true
+    	)
+    	List<TodoModel> findTasksNew();
+
   
 }
