@@ -51,5 +51,11 @@ public interface TodoRepository extends JpaRepository<TodoModel, UUID> {
     		nativeQuery=true
     		)
     List<PendingTasksOnDue> findDueByOrder();
-  
+    //demo branch 
+    @Query(
+    	    value="SELECT * FROM todo WHERE completed=false",
+    	    nativeQuery=true
+    	)
+    	List<TodoModel> findIncomplete();
+
 }
